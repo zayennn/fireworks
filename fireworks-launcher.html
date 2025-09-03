@@ -146,16 +146,12 @@
         this.timeToLive = canvas.height / (canvas.height + 800);
 
         this.init = function() {
-          // Initialize the cannonballs start coordinates (from muzzle of cannon)
           this.x = Math.cos(this.source.angle) * this.source.width;
           this.y = Math.sin(this.source.angle) * this.source.width;
 
-          // Translate relative to canvas positioning
           this.x = this.x + (canvas.width / 2);
           this.y = this.y + (canvas.height);	
 
-          // Determine whether the cannonball should be 
-          // fired to the left or right of the cannon
           if (mouse.x - canvas.width / 2 < 0) {
             this.dx = -this.dx;
           }
