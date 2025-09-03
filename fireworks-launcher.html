@@ -255,7 +255,6 @@
               this.particles.push(new Particle(this.source.x, this.source.y, dx, dy, 1, randomParticleColor));
           }
 
-          // Create ring once explosion is instantiated
             // this.rings.push(new Ring(this.source, "blue"));
         };
 
@@ -265,17 +264,14 @@
       for (var i = 0; i < this.particles.length; i++) {
               this.particles[i].update();
 
-              // Remove particles from scene one time to live is up
               if (this.particles[i].timeToLive < 0) {
                 this.particles.splice(i, 1);
               }
           }
 
-          // Render rings
           for (var j = 0; j < this.rings.length; j++) {
             this.rings[j].update();
 
-            // Remove rings from scene one time to live is up
               if (this.rings[j].timeToLive < 0) {
                 this.rings.splice(i, 1);
               }
@@ -294,7 +290,6 @@
         colors = [
 
 
-          // Red / Orange
           {
             cannonballColor: "#affdf4",
             particleColors: [
