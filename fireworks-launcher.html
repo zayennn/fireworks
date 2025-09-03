@@ -334,13 +334,11 @@
         }
 
 
-        // Render cannonballs
         for (var i = 0; i < cannonballs.length; i++) {
             cannonballs[i].update();
 
             if (cannonballs[i].timeToLive <= 0) {
 
-              // Create particle explosion after time to live expires
               explosions.push(new Explosion(cannonballs[i]));
 
               cannonballs.splice(i, 1);
@@ -348,12 +346,10 @@
             }
         }
 
-        // Render explosions
         for (var j = 0; j < explosions.length; j++) {
               //Do something
               explosions[j].update();
 
-            // Remove explosions from scene once all associated particles are removed
             if (explosions[j].particles.length <= 0) {
               explosions.splice(j, 1);
             }
